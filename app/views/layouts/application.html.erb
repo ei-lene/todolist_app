@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TodolistApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+<br>
+<nav>
+  <%= link_to "Home", root_path%>
+  <%= link_to "Create a list", new_list_path%>
+  <%= link_to "Add tasks", new_task_path%>
+</nav>
+</body>
+</html>
