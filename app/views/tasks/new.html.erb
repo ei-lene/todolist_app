@@ -3,8 +3,8 @@
   <%= f.label(:description) %>
   <%= f.text_field(:description) %>
   <br>
-  <%= f.label(:"add task to list number") %>
-  <%= f.text_field(:list_id) %>
+  <%= f.label("Add to list :") %>
+  <%= f.select :list, List.all.collect{|l| [l.name,l.id]} %>
   <br>
   <%= f.submit %>
 <% end %>
