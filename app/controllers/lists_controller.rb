@@ -6,9 +6,10 @@ class ListsController < ApplicationController
 
   def create  
     @list = List.new(params[:list])
+    @list.permalink = @list.name.downcase.gsub(" ","-")
     @list.save
     
-    redirect_to '/'
+    redirect_to list_path(@list)
   end
 
   def index
@@ -16,7 +17,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:id])
+    @list = List.find_by_permalink(params[:id])
 
     @task = Task.new
     @task.list_id = @list.id
@@ -24,17 +25,17 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    @list = List.find(params[:id])
+    @list = List.find_by_permalink(params[:id])
     @list.destroy
     redirect_to '/'
   end
 
   def edit
-    @list = List.find(params[:id])
+    @list = List.find_by_permalink(params[:id])
   end
 
   def update
-    @list = List.find(params[:id])
+    @list = List.find_by_permalink(params[:id])
     @list.update_attributes(params[:list])
 
     redirect_to list_path

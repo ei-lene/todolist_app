@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130301031744) do
+ActiveRecord::Schema.define(:version => 20130303230253) do
 
   create_table "lists", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "permalink"
   end
 
   create_table "tasks", :force => true do |t|
