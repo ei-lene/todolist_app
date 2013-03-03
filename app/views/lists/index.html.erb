@@ -1,9 +1,9 @@
 <h1>All lists</h1>
 
-<ul>
+<ol>
   <% @lists.each do |list| %>
     <li>
       <%= link_to list.name, list %>
     </li>
   <% end %>
-</ul>
+</ol>

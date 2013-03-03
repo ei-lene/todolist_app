@@ -1,12 +1,10 @@
 <h1><%= @list.name %></h1>
 
 <ul>
-  <% for @task in Task.all %>
-    <% if @task.list_id == @list.id %>
-      <li>
-        <%= @task.description %>
-      </li>
-    <% end %>
+  <% @list.tasks.each do |t| %>
+    <li>
+      <%= t.description %>
+    </li>
   <% end %>
 </ul>
 

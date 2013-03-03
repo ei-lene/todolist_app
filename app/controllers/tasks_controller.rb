@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   def create  
     @task = Task.new(params[:task])
     @task.save
-    redirect_to "/lists/#{@task.list_id}"
+    redirect_to @task.list  
   end
 
 end
