@@ -8,6 +8,15 @@
   <% end %>
 </ul>
 
+<h3> Add tasks to this list</h3>
+<%= form_for(@task) do |f| %>
+  <%= f.hidden_field(:list_id) %>
+  <%= f.label(:description) %>
+  <%= f.text_field(:description) %>
+  <br>
+  <br>
+  <%= f.submit %>
+<% end %>
+
 <%= link_to "Delete this list", list_path, method: :delete %>
 <%= link_to "Edit this list", edit_list_path %>
-

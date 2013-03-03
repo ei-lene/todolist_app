@@ -4,7 +4,7 @@
   <%= f.text_field(:description) %>
   <br>
   <%= f.label("Add to list :") %>
-  <%= f.select :list, List.all.collect{|l| [l.name,l.id]} %>
+  <%= f.select :list_id, List.all.collect { |l| [l.name, l.id]} %>
   <br>
   <%= f.submit %>
 <% end %>

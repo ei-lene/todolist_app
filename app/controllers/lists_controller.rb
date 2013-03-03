@@ -16,6 +16,10 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+
+    @task = Task.new
+    @task.list_id = @list.id
+    
   end
 
   def destroy
