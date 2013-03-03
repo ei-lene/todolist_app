@@ -16,7 +16,13 @@ class TasksController < ApplicationController
     @task.update_attributes(params[:task])
 
     redirect_to @task.list  
+  end
 
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+
+    redirect_to @task.list
   end
 
 end

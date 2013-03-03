@@ -7,6 +7,7 @@ class ListsController < ApplicationController
   def create  
     @list = List.new(params[:list])
     @list.save
+    
     redirect_to '/'
   end
 
@@ -19,7 +20,7 @@ class ListsController < ApplicationController
 
     @task = Task.new
     @task.list_id = @list.id
-    
+
   end
 
   def destroy
