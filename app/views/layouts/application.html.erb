@@ -10,12 +10,13 @@
   <div class="background">
 
 <%= yield %>
-<br>
-<br>
-<nav class="navigation">
-  <%= link_to "Home", root_path%>
-  <%= link_to "Create a list", new_list_path%>
-  <%= link_to "Add tasks", new_task_path%>
+
+<nav class="nav_links">
+  <ul>
+    <li class="first"><%= link_to "Home", root_path%></li>
+    <li><%= link_to "Create a list", new_list_path%></li>
+    <li><%= link_to "Add tasks", new_task_path%></li>
+  </ul>
 </nav>
 </div>
 </body>
