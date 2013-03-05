@@ -6,6 +6,8 @@
   <%= f.submit %>
 <% end %>
 
+<br>
+
 <% @list.tasks.each do |t| %>
   <%= form_for(t) do |f| %>
     <%= f.label(:description) %>
@@ -13,6 +15,9 @@
     <br>
     <%= f.submit %>
   <% end %>
-  <%= link_to "Delete this task", task_path(t), method: :delete %>
+
+  <%= button_to 'Delete', task_path(t), method: :delete %>
+
+  <br>  
 <% end %>
 
