@@ -6,8 +6,10 @@ class TasksController < ApplicationController
 
   def create  
     @task = Task.new(params[:task])
+    params[:task][:person_ids].each do |person_id|
+      @task.task_assignments.build(:person_id => person_id)
+    end
     @task.save
-
     redirect_to @task.list  
   end
 

@@ -3,7 +3,19 @@
 <ul>
   <% @list.tasks.each do |t| %>
     <li>
-      <%= t.description %>
+      <%= t.description %> 
+      <% if t.persons.present? %>
+      -
+      <% end %>
+      <% i=0 %>
+      <% t.persons.each do |p| %>
+        <%= p.name %>
+        <% i+=1 %>
+        <% if i < t.persons.size %>
+        ,
+        <% end %>
+        
+      <% end %>
     </li>
   <% end %>
 </ul>
