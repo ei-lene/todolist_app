@@ -16,28 +16,22 @@
     <%= f.submit %>
   <% end %>
   <%= button_to 'Delete Task', task_path(t), method: :delete %>
-
-
-
-  Assign task to person:
+ 
   <%= form_for(t) do |f| %>
-    <%= f.select :person_ids, Person.all.collect{|p| [p.name, p.id]} %>
+    Assign task to person:<br>
+    <% Person.all.each do |person| %>
+      <% if t.persons.map {|p| p.id}.include?(person.id) %>
+      <input type="checkbox" name="task[person_ids][]" value="<%= person.id %>" checked /> <%= person.name %>
+      <br>
+      <% else %>
+      <input type="checkbox" name="task[person_ids][]" value="<%= person.id %>"/> <%= person.name %>
+      <br>
+      <% end %>
+    <% end %>
+
   <%= f.submit %>
   <% end %>
 
-
-  <ul>
-    <% t.persons.each do |p| %>
-      <%= form_for(p) do |f| %>
-      <li>
-        <%= f.label("person assigned") %>
-        <%= f.text_field(:name) %>
-      </li>
-      <%= f.submit %>
-    <% end %>
-    <%= button_to 'Delete Person', person_path(p), method: :delete %>
-    <% end %>
-   </ul> 
   <br>  
 <% end %>
 

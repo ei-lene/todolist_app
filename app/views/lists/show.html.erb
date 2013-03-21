@@ -26,9 +26,16 @@
   <%= f.label(:description) %>
   <%= f.text_field(:description) %>
   <br>
+  <%= f.label("Assign to person :") %>
+  <% Person.all.each do |p| %>
+    <br>
+    <input type="checkbox" name="task[person_ids][]" value="<%= p.id %>" /> <%= p.name %>
+  <% end %>
+  <br>
   <br>
   <%= f.submit %>
 <% end %>
+
 
 <div class="list_nav">
   <ul>

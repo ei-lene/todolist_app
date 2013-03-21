@@ -14,7 +14,7 @@ class PeopleController < ApplicationController
     @person = Person.new(params[:person])
     # @person.slug = @person.name.downcase.gsub(" ","-")
     @person.save
-    redirect to "/people/index"
+    redirect to "/people"
   end
 
   def update
