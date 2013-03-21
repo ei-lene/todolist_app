@@ -15,9 +15,30 @@
     <br>
     <%= f.submit %>
   <% end %>
+  <%= button_to 'Delete Task', task_path(t), method: :delete %>
 
-  <%= button_to 'Delete', task_path(t), method: :delete %>
 
+
+  Assign task to person:
+  <%= form_for(t) do |f| %>
+    <%= f.select :person_ids, Person.all.collect{|p| [p.name, p.id]} %>
+  <%= f.submit %>
+  <% end %>
+
+
+  <ul>
+    <% t.persons.each do |p| %>
+      <%= form_for(p) do |f| %>
+      <li>
+        <%= f.label("person assigned") %>
+        <%= f.text_field(:name) %>
+      </li>
+      <%= f.submit %>
+    <% end %>
+    <%= button_to 'Delete Person', person_path(p), method: :delete %>
+    <% end %>
+   </ul> 
   <br>  
 <% end %>
+
 
