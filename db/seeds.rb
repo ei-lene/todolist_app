@@ -5,3 +5,75 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+users = User.create([
+  { :display_name => "Bob",
+    :name => "Bob",
+    :email => "bob@flatironschool.com",
+    :password => "123"},
+  { :display_name => "Scotty",
+    :name => "Scotty",
+    :email => "Scotty@flatironschool.com",
+    :password => "123"},
+  { :display_name => "JimmyJam",
+    :name => "JimmyJam",
+    :email => "JimmyJam@flatironschool.com",
+    :password => "123"}
+])
+
+lists = List.create([
+  {:name => "Homework",
+   :permalink => "homework" 
+  },
+  {:name => "Rails Project",
+   :permalink => "rails-project" 
+  }
+])
+
+tasks = Task.create([
+  {:description => "Write blog post",
+   :list_id => 1 
+  },
+  {:description => "Rails Lab",
+   :list_id => 1 
+  },
+  {:description => "Discuss project framework",
+   :list_id => 2 
+  },
+  {:description => "Research APIs",
+   :list_id => 2 
+  },
+  {:description => "Prepare design mockup",
+   :list_id => 2
+   },
+   {:description => "Prepare user stories",
+   :list_id => 2
+   }  
+])
+
+# task_assignments = Task_Assignment.create([
+#     {:user_id => 1,
+#      :task_id => 3 
+#     },
+#     {:user_id => 2,
+#      :task_id => 3 
+#     },
+#     {:user_id => 3,
+#      :task_id => 3 
+#     },
+#     {:user_id => 1,
+#      :task_id => 4 
+#     },
+#     {:user_id => 2,
+#      :task_id => 5 
+#     },
+#     {:user_id => 3,
+#      :task_id => 6 
+#     },
+#     {:user_id => 1,
+#      :task_id => 1 
+#     },
+#     {:user_id => 1,
+#      :task_id => 2 
+#      }
+# ])

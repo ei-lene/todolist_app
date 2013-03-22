@@ -18,13 +18,13 @@
   <%= button_to 'Delete Task', task_path(t), method: :delete %>
  
   <%= form_for(t) do |f| %>
-    Assign task to person:<br>
-    <% Person.all.each do |person| %>
-      <% if t.persons.map {|p| p.id}.include?(person.id) %>
-      <input type="checkbox" name="task[person_ids][]" value="<%= person.id %>" checked /> <%= person.name %>
+    Assign task to user:<br>
+    <% User.all.each do |user| %>
+      <% if t.users.map {|u| u.id}.include?(user.id) %>
+      <input type="checkbox" name="task[user_ids][]" value="<%= user.id %>" checked /> <%= user.name %>
       <br>
       <% else %>
-      <input type="checkbox" name="task[person_ids][]" value="<%= person.id %>"/> <%= person.name %>
+      <input type="checkbox" name="task[user_ids][]" value="<%= user.id %>"/> <%= user.name %>
       <br>
       <% end %>
     <% end %>

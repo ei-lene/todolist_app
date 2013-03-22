@@ -7,9 +7,9 @@ class TasksController < ApplicationController
   def create  
     @task = Task.new(params[:task])
     # raise params.inspect
-    # raise @task.persons.inspect
-    # params[:task][:person_ids].each do |person_id|
-    #   @task.task_assignments.build(:person_id => person_id)
+    # raise @task.users.inspect
+    # params[:task][:user_ids].each do |user_id|
+    #   @task.task_assignments.build(:user_id => user_id)
     # end
 
     @task.save

@@ -4,14 +4,14 @@
   <% @list.tasks.each do |t| %>
     <li>
       <%= t.description %> 
-      <% if t.persons.present? %>
+      <% if t.users.present? %>
       -
       <% end %>
       <% i=0 %>
-      <% t.persons.each do |p| %>
-        <%= p.name %>
+      <% t.users.each do |u| %>
+        <%= u.name %>
         <% i+=1 %>
-        <% if i < t.persons.size %>
+        <% if i < t.users.size %>
         ,
         <% end %>
         
@@ -26,10 +26,10 @@
   <%= f.label(:description) %>
   <%= f.text_field(:description) %>
   <br>
-  <%= f.label("Assign to person :") %>
-  <% Person.all.each do |p| %>
+  <%= f.label("Assign to user :") %>
+  <% User.all.each do |u| %>
     <br>
-    <input type="checkbox" name="task[person_ids][]" value="<%= p.id %>" /> <%= p.name %>
+    <input type="checkbox" name="task[user_ids][]" value="<%= u.id %>" /> <%= u.name %>
   <% end %>
   <br>
   <br>
