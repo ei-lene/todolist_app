@@ -5,7 +5,6 @@ class Task < ActiveRecord::Base
   has_many :task_assignments
   has_many :persons, through: :task_assignments
 
-
 end
 
 # t.persons.map{|p| p.id } ==> array of persons ids

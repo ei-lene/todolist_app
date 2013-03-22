@@ -6,9 +6,12 @@ class TasksController < ApplicationController
 
   def create  
     @task = Task.new(params[:task])
-    params[:task][:person_ids].each do |person_id|
-      @task.persons.build(:id => person_id)
-    end
+    # raise params.inspect
+    # raise @task.persons.inspect
+    # params[:task][:person_ids].each do |person_id|
+    #   @task.task_assignments.build(:person_id => person_id)
+    # end
+
     @task.save
     redirect_to @task.list  
   end
@@ -25,13 +28,6 @@ class TasksController < ApplicationController
     @task.destroy
 
     redirect_to @task.list
-  end
-
-    def potential_assignees
-    @task = Task.find(params[:id])
-    @task.persons.each do |person|
-      Person.all.delete_if{ |p| p.id == person.id}
-    end
   end
 
 end
