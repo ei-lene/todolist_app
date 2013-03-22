@@ -10,15 +10,15 @@ users = User.create([
   { :display_name => "Bob",
     :name => "Bob",
     :email => "bob@flatironschool.com",
-    :password => "123"},
+    :password => "password"},
   { :display_name => "Scotty",
     :name => "Scotty",
     :email => "Scotty@flatironschool.com",
-    :password => "123"},
+    :password => "password"},
   { :display_name => "JimmyJam",
     :name => "JimmyJam",
     :email => "JimmyJam@flatironschool.com",
-    :password => "123"}
+    :password => "password"}
 ])
 
 lists = List.create([
