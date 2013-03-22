@@ -12,8 +12,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    @user.save
-    redirect to "/users"
+    if @user.save
+      redirect_to root_url, notice: "Thank you for signing up!"  
+    else
+     render "new" 
+    end
   end
 
   def update

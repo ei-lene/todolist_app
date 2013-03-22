@@ -21,6 +21,26 @@ body {
 
 }
 
+.top_nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+    li {
+    color:#fff;
+    background-color: #999;
+    list-style:none;
+    float:left;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    margin: 0.5%;
+
+      a:visited{
+        color:#fff;
+      }
+    }
+}
+
 .nav_links{
   position: absolute;
   left: 45px;
