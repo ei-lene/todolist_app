@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :logged_in?, except: [:index, :show]
+
   def index
     @users = User.all
   end
@@ -12,6 +14,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @user.email = @user.email.downcase
 
     if @user.save
       redirect_to root_url, notice: "Thank you for signing up!"  

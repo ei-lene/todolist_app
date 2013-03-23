@@ -45,10 +45,18 @@
 
     <nav class="nav_links">
       <ul>
-        <li class="first"><%= link_to "Home", root_path%></li>
-        <li><%= link_to "Create a list", new_list_path%></li>
-        <li><%= link_to "Add tasks", new_task_path%></li>
-        <li><%= link_to "Users", users_path%></li>    
+        <% unless current_page?(root_path) %>
+          <li><%= link_to "Home", root_path%></li>
+        <% end %>
+        <% unless current_page?(new_list_path) %>
+          <li><%= link_to "Create a list", new_list_path%></li>
+        <% end %>
+        <% unless current_page?(new_task_path) %>
+          <li><%= link_to "Add tasks", new_task_path%></li>
+        <% end %>
+        <% unless current_page?(users_path) %>
+          <li><%= link_to "Users", users_path%></li>  
+        <% end %>  
       </ul>
     </nav>
 </div>
