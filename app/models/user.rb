@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   attr_accessible :display_name, :name, :email, :password , :password_confirmation ,:role
   has_many :task_assignments
   has_many :tasks, through: :task_assignments
-  has_many :lists
 
   has_secure_password
   # No need to validate presence of password or password_confirmation as that will be validated via has_secure_password
@@ -14,6 +13,6 @@ class User < ActiveRecord::Base
   validates :name, :length => { :minimum => 3 }
   validates_format_of :name, :with => /[a-zA-Z]/
 
-  validates :password, :length => { :minimum => 6 }
+  validates :password, :length => {:minimum => 6 }, :on => :create
 
 end

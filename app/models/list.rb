@@ -1,7 +1,6 @@
 class List < ActiveRecord::Base
-  attr_accessible :name, :permalink, :user_id
+  attr_accessible :name, :permalink
   has_many :tasks
-  belongs_to :user
 
   def to_param
     permalink
