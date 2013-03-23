@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_filter :logged_in?, except: [:index, :show]
 
   def new  
     @list = List.new

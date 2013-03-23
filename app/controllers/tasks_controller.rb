@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_filter :logged_in?, except: [:index, :show]
   
   def new  
     @task = Task.new    

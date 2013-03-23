@@ -29,10 +29,12 @@ users = User.create([
 
 lists = List.create([
   {:name => "Homework",
-   :permalink => "homework" 
+   :permalink => "homework",
+   :user_id => 1 
   },
   {:name => "Rails Project",
-   :permalink => "rails-project" 
+   :permalink => "rails-project", 
+   :user_id => 2
   }
 ])
 
@@ -57,29 +59,29 @@ tasks = Task.create([
    }  
 ])
 
-# task_assignments = Task_Assignment.create([
-#     {:user_id => 1,
-#      :task_id => 3 
-#     },
-#     {:user_id => 2,
-#      :task_id => 3 
-#     },
-#     {:user_id => 3,
-#      :task_id => 3 
-#     },
-#     {:user_id => 1,
-#      :task_id => 4 
-#     },
-#     {:user_id => 2,
-#      :task_id => 5 
-#     },
-#     {:user_id => 3,
-#      :task_id => 6 
-#     },
-#     {:user_id => 1,
-#      :task_id => 1 
-#     },
-#     {:user_id => 1,
-#      :task_id => 2 
-#      }
-# ])
+task_assignments = TaskAssignment.create([
+    {:user_id => 1,
+     :task_id => 3 
+    },
+    {:user_id => 2,
+     :task_id => 3 
+    },
+    {:user_id => 3,
+     :task_id => 3 
+    },
+    {:user_id => 1,
+     :task_id => 4 
+    },
+    {:user_id => 2,
+     :task_id => 5 
+    },
+    {:user_id => 3,
+     :task_id => 6 
+    },
+    {:user_id => 1,
+     :task_id => 1 
+    },
+    {:user_id => 1,
+     :task_id => 2 
+     }
+])

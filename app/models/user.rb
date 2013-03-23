@@ -2,10 +2,12 @@ class User < ActiveRecord::Base
   attr_accessible :display_name, :name, :email, :password , :password_confirmation ,:role
   has_many :task_assignments
   has_many :tasks, through: :task_assignments
+  has_many :lists
 
   has_secure_password
-
-  validates :display_name, :name, :email, :password, :presence => { :on => :create }
+  # No need to validate presence of password or password_confirmation as that will be validated via has_secure_password
+  
+  validates :display_name, :name, :email, :presence => { :on => :create }
   validates_uniqueness_of :email, :display_name 
   validates_format_of :email, :with => /^[-a-z-A-Z-0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/
 

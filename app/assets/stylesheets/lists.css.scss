@@ -20,20 +20,23 @@ body {
   background: url('notepad.png') repeat-x;
 
 }
-
-.top_nav{
+.display_header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+}
+
+.top_nav{
     li {
     color:#fff;
     background-color: #999;
     list-style:none;
-    float:left;
+    float: right;
     padding-left: 0.5%;
     padding-right: 0.5%;
     margin: 0.5%;
+    border-radius:5px;
 
       a:visited{
         color:#fff;
@@ -55,6 +58,7 @@ body {
   padding-left: 0.5%;
   padding-right: 0.5%;
   margin: 0.5%;
+  border-radius:5px;
 }
 
 .nav_links li a:visited{
@@ -75,8 +79,40 @@ body {
   padding-left: 0.5%;
   padding-right: 0.5%;
   margin: 0.5%;
+  border-radius:5px;
 }
 
 .list_nav li a:visited{
   color:#fff;
+}
+
+#notice {
+    li {
+      background-color: #CCFF99;
+      border:#006600;
+      color: #006600;
+      list-style:none;
+      float:right;
+      padding-left: 0.5%;
+      padding-right: 0.5%;
+      margin: 0.5%;
+      border-radius:5px;
+    }
+}
+
+#alert {
+    li {
+      background-color: #FFCCCC;
+      border:#FF0000;
+      color: #FF0000;
+      list-style:none;
+      float:right;
+      padding-left: 0.5%;
+      padding-right: 0.5%;
+      margin: 0.5%;
+      border-radius:5px;
+    }
+}
+.clear {
+  clear: both;
 }
