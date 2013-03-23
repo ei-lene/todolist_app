@@ -9,19 +9,19 @@
 users = User.create([
   { :display_name => "Bob",
     :name => "Bob",
-    :email => "bob@flatironschool.com",
+    :email => "bob@gmail.com",
     :password => "password",
     :password_confirmation => "password"
   },
   { :display_name => "Scotty",
     :name => "Scotty",
-    :email => "scotty@flatironschool.com",
+    :email => "scotty@gmail.com",
     :password => "password",
     :password_confirmation => "password"
   },
   { :display_name => "JimmyJam",
     :name => "JimmyJam",
-    :email => "jimmyjam@flatironschool.com",
+    :email => "jimmyjam@gmail.com",
     :password => "password",
     :password_confirmation => "password"
   }

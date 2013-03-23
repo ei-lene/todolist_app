@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :display_name, :name, :email, :password , :password_confirmation ,:role
+  attr_accessible :display_name, :name, :email, :password , :password_confirmation ,:role, :email_confirmation
+  attr_accessor :email_confirmation
   has_many :task_assignments
   has_many :tasks, through: :task_assignments
 
