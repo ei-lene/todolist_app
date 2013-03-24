@@ -10,7 +10,15 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     true if current_user
-    redirect_to new_session_path, alert: "Please log in" unless current_user 
+    redirect_to login_path, alert: "Please log in" unless current_user 
+  end
+
+  def login(user)
+    session[:user_id] = user.id
+  end
+
+  def logout
+    session[:user_id] = nil
   end
 
 end

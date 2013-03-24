@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :logged_in?, except: [:index, :show]
+  before_filter :logged_in?, only: [:edit, :update, :destroy ]
 
   def index
     @users = User.all
