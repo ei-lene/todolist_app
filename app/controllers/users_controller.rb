@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @user.email = @user.email.downcase
 
     if @user.save
+      login(@user)
       redirect_to root_url, notice: "Thank you for signing up!"  
     else
      render "new" 

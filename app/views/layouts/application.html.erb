@@ -10,24 +10,28 @@
   <div class="background">
     <div class="header_display">
       <nav class="top_nav">
-        <ul>
-          <% if current_user %>
-            <li>Logged in as <%= current_user.display_name %>
-            </li>
+        <% if current_user %>
+          <ul>  
             <li>
               <%= link_to "Log out", logout_path %> 
             </li>
-          <% else %>
+          </ul>  
+          <ul class="notice">
+            <li>Logged in as <%= current_user.display_name %>
+            </li>
+          </ul>
+        <% else %>
+          <ul>
             <li>
               <%= link_to "Sign up", signup_path %> 
             </li>
             <li>
               <%= link_to "Log in", login_path %> 
             </li>
-          <% end %>
-        </ul>
+          </ul>
+        <% end %>
       </nav>
-      <ul id="notice">
+      <ul class="notice">
         <li>
           <%= notice %>
         </li>
